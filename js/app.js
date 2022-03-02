@@ -133,13 +133,16 @@ let restaurants = [
     } // End of Restaurant
 ];
 
+const splashPage = document.getElementById('splashPage');
+const restHomePage = document.getElementById('restHome');
+const restMenuPage = document.getElementById('restMenu');
 const restaurantList = document.getElementById('restList');
-const restaurantThumbnailBox = document.getElementsByClassName('restThumbnails');
+
 
 // Show Restaurants on Splash Page
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
-        return `<li class="restThumbnails">
+        return `<li class="restThumbnails" id="${rest.id}">
         <div class="restThumbImage">${rest.logo}</div>
         <div class="restThumbInfoContainer">
             <h3 class="restThumbName">${rest.name}</h3>
@@ -155,6 +158,22 @@ function displayRestaurantThumbnails() {
 
 
 
+
 window.addEventListener('DOMContentLoaded', function() {
     displayRestaurantThumbnails(restaurants);
+    const restaurantThumbnails = [...document.getElementsByClassName('restThumbnails')];
+
+    console.log(restaurantThumbnails);
+
+    // Clicking restThumbnail, changing to restHomePage
+    restaurantThumbnails.forEach(rest => {
+        rest.addEventListener('click', function() {
+            splashPage.classList.remove('activePage');
+            restHomePage.classList.add('activePage');
+            displayRestHome();
+        })
+    });
+
+
+
 })
