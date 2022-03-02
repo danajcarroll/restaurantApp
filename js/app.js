@@ -17,7 +17,7 @@ let restaurants = [
         street: '2354 Longlane St',
         city: 'Toronto, ON',
         postalCode: 'M4B 124',
-        miniBio: 'Enjoy a truly authentic Italian dining experience at Five Vines. With ingredients sourced from Italy, such as winemakers, meat and artisinal cheese producers and so much more. ',
+        miniBio: 'Enjoy a truly authentic Italian dining experience at Five Vines. With ingredients sourced from Italy, such as winemakers, meat and artisinal cheese producers and so much more.',
         hours: {
             mon: {
                 open: '3pm',
@@ -313,14 +313,17 @@ homeButton.addEventListener('click', function() {
     restHomePage.classList.remove('activePage');
     splashPage.classList.add('activePage');
     splashPage.style.display = 'grid';
+    restHomePage.style.display = 'none';
 });
 viewMenuButton.addEventListener('click', function() {
     restHomePage.classList.remove('activePage');
     restMenuPage.classList.add('activePage');
+    restHomePage.style.display = 'none';
 });
 restHomeButton.addEventListener('click', function() {
     restMenuPage.classList.remove('activePage');
     restHomePage.classList.add('activePage');
+    restHomePage.style.display = 'flex';
 });
 
 
@@ -339,8 +342,9 @@ window.addEventListener('DOMContentLoaded', function() {
             splashPage.classList.remove('activePage');
             splashPage.style.display = 'none';
             restHomePage.classList.add('activePage');
+            restHomePage.style.display = 'flex';
             let restaurantHomeHTML = displayRestaurantHome(`${rest.id}`);
-            restHomeContainer.innerHTML = restaurantHomeHTML;
+            // restHomeContainer.innerHTML = restaurantHomeHTML;
         })
     });
 
