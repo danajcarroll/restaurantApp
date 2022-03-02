@@ -114,4 +114,11 @@ li {
         height: 5rem;
         background-color: white;
     }
+
+    /* RESTAURANT HOME STYLING */
+    .homeButton {
+        width: 3rem;
+        height: 3rem;
+        background-color: pink;
+    }
 }
