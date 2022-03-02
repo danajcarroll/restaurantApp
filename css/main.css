@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red: red;
+    --green: green;
+    --blue: blue;
+}
+
+section {
+    display: none;
+}
+.activePage {
+    display: block;
+}
+li {
+    list-style-type: none;
+}
+#splashPage {
+    background-color: aquamarine;
+}
+#restHome {
+    background-color: greenyellow;
+}
+#restMenu {
+    background-color: fuchsia;
+}
+
+/* Media Query for Mobile Devices */
+/* @media (max-width: 480px) {
+    body {
+        background-color: red;
+    }
+} */
+
+/* Media Query for low resolution  Tablets, Ipads */
+/* @media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-color: yellow;
+    }
+} */
+
+/* Media Query for Tablets Ipads portrait mode */
+/* @media (min-width: 768px) and (max-width: 1024px){
+    body {
+        background-color: blue;
+    }
+} */
+
+/* Media Query for Laptops and Desktops */
+/* @media (min-width: 1025px) and (max-width: 1280px){
+    body {
+        background-color: green;
+    }
+} */
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: lightpink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+        background-color: white;
+        height: 35rem;
+        width: 50rem;
+        border-radius: 1rem;
+    }
+    .activePage {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        border: 1px solid red;
+    }
+    .filterContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid orange;
+    }
+    .filterButton {
+        margin: 1rem 0.75rem;
+    }
+    .restContainer {
+        width: 100%;
+        height: 100%;
+    }
+    .restList {
+        padding: 1rem;
+    }
+
+    /* THUMBNAIL STYLING */
+    .restThumbnails {
+        width: 15rem;
+        height: 6rem;
+        background-color: coral;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid purple;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .restThumbImage {
+        width: 5rem;
+        height: 5rem;
+        background-color: white;
+    }
+}
