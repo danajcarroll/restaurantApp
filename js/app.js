@@ -128,7 +128,33 @@ let restaurants = [
                     price: 9
                 }
             ]
-        }
+        } // End of Menu
 
     } // End of Restaurant
-]
+];
+
+const restaurantList = document.getElementById('restList');
+const restaurantThumbnailBox = document.getElementsByClassName('restThumbnails');
+
+// Show Restaurants on Splash Page
+function displayRestaurantThumbnails() {
+    let displayRestaurants = restaurants.map(function(rest) {
+        return `<li class="restThumbnails">
+        <div class="restThumbImage">${rest.logo}</div>
+        <div class="restThumbInfoContainer">
+            <h3 class="restThumbName">${rest.name}</h3>
+            <p class="restThumbGenre">${rest.diningType}</p>
+            <p class="restThumbRating">${rest.rating}</p>
+        </div>
+    </li>`
+    });
+    let restThumbnailHTML = displayRestaurants.join('');
+    restaurantList.innerHTML = restThumbnailHTML;
+}
+
+
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    displayRestaurantThumbnails(restaurants);
+})
