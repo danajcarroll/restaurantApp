@@ -19,7 +19,7 @@ section {
 li {
     list-style-type: none;
 }
-#splashPage {
+/* #splashPage {
     background-color: aquamarine;
 }
 #restHome {
@@ -27,7 +27,7 @@ li {
 }
 #restMenu {
     background-color: fuchsia;
-}
+} */
 
 /* Media Query for Mobile Devices */
 /* @media (max-width: 480px) {
@@ -79,40 +79,93 @@ li {
         padding: 1rem;
         border: 1px solid red;
     }
-    .filterContainer {
+    /* ********** SPLASH PAGE ********** */
+    #splashPage {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        height: 100%;
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 8% 92%;
+        grid-template-areas: 
+        'filter search'
+        'filter rest'
+        ;
+    }
+    .filterBar {
+        grid-area: filter;
+        width: 100%;
+        padding: 1rem 0.75rem;
         border: 1px solid orange;
     }
-    .filterButton {
-        margin: 1rem 0.75rem;
+    .filterSection {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    .filterSection::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0.1rem;
+        background-color: grey;
+    }
+    .filterMiniBox {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 0.25rem;
+    }
+    .filterMiniBox > input {
+        margin-right: 0.5rem;
+    }
+    .searchBox {
+        grid-area: search;
+    }
+    .searchBar {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
     }
     .restContainer {
+        grid-area: rest;
         width: 100%;
         height: 100%;
     }
     .restList {
-        padding: 1rem;
+        padding: 1rem 0rem;
+        height: 100%;
+        width: 100%;
+        border: 1px solid purple;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     /* THUMBNAIL STYLING */
     .restThumbnails {
-        width: 15rem;
+        width: 47%;
         height: 6rem;
         background-color: coral;
-        padding: 0.75rem;
         border-radius: 0.5rem;
         border: 1px solid purple;
 
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        margin-bottom: 1rem;
     }
     .restThumbImage {
-        width: 5rem;
-        height: 5rem;
-        background-color: white;
+        background-color: pink;
+        height: 100%;
+        width: 50%;
+    }
+    .restThumbInfo {
+        width: 50%;
+        padding: 0rem 0.5rem;
     }
 
     /* RESTAURANT HOME STYLING */
