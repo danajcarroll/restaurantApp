@@ -10,39 +10,97 @@
 <body>
     <main>
         <section id="splashPage" class="activePage">
-            <div class="filterContainer">
-                <button class="filterButton">Casual Dining</button>
-                <button class="filterButton">Fast Food</button>
-                <button class="filterButton">Upscale Dining</button>
+            <div class="filterBar">
+                <div class="filterSection diningType">
+                    <div class="filterMiniBox">
+                        <input type="radio" id="delivery" name="diningType">
+                        <label for="delivery">Delivery</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="takeout" name="diningType">
+                        <label for="takeout">Takeout</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="dineIn" name="diningType">
+                        <label for="dinein">Dine In</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="Reservations" name="diningType">
+                        <label for="reservations">Reservations</label>
+                    </div>
+                </div>
+                <div class="filterSection priceRange">
+                    <div class="filterMiniBox">
+                        <input type="radio" id="cheap" name="priceRange">
+                        <label for="cheap">$</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="mid" name="priceRange">
+                        <label for="mid">$$</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="fineDining" name="priceRange">
+                        <label for="fineDining">$$$</label>
+                    </div>
+                </div>
+                <div class="filterSection mealType">
+                    <div class="filterMiniBox">
+                        <input type="radio" id="breakfast" name="meals">
+                        <label for="breakfast">Breakfast</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="lunch" name="meals">
+                        <label for="lunch">Lunch</label>
+                    </div>
+
+                    <div class="filterMiniBox">
+                        <input type="radio" id="dinner" name="meals">
+                        <label for="dinner">Dinner</label>
+                    </div>
+                </div>
+            </div> <!-- end of filter bar -->
+
+            <div class="searchBox">
+                <input type="text" class="searchBar" placeholder="Search for a restaurant">
             </div>
             <div class="restContainer">
                 <ul class="restList" id="restList">
     
-                    <!-- <li class="restThumbnails">
+                    <li class="restThumbnails">
                         <div class="restThumbImage"></div>
-                        <div class="restThumbInfoContainer">
+                        <div class="restThumbInfo">
                             <h3 class="restThumbName">Five Vines</h3>
-                            <p class="restThumbGenre">Casual Dining</p>
+                            <p class="restThumbCity">Casual Dining</p>
                             <p class="restThumbRating">4</p>
                         </div>
-                    </li> -->
+                    </li>
     
                 </ul>
             </div>
                 
         </section>
 
-        <section id="restHome" class="">
+        <section id="restHome">
             <div class="sideBar">
                 <div class="homeButton" id="homeButton"></div>
+                <button class="viewMenu" id="viewMenuButton">View Menu</button>
             </div>
             <div class="restaurantHomeContainer" id="restaurantHomeContainer">
-                
             </div>
         </section>
 
-        <section id="restMenu"
-        ></section>
+        <section id="restMenu">
+            <div class="restHeader">
+                <button id="restHomeButton">Restaurant Home</button>
+            </div>
+            <div class="restaurantMenu"></div>
+        </section>
 
 
 
