@@ -5,7 +5,7 @@ let restaurants = [
     { // Start of restaurant
         id: 1,
         name: 'Five Vines',
-        logo: './images/restaurantLogos/fiveVines.png',
+        logo: './images/logo-fiveVines.png',
         images: [
             '',
             '',
@@ -137,23 +137,46 @@ const splashPage = document.getElementById('splashPage');
 const restHomePage = document.getElementById('restHome');
 const restMenuPage = document.getElementById('restMenu');
 const restaurantList = document.getElementById('restList');
+const restHomeContainer = document.getElementById('restaurantHomeContainer');
+const homeButton = document.getElementById('homeButton');
 
 
-// Show Restaurants on Splash Page
+// Display Restaurants on Splash Page
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
-        return `<li class="restThumbnails" id="${rest.id}">
-        <div class="restThumbImage">${rest.logo}</div>
-        <div class="restThumbInfoContainer">
-            <h3 class="restThumbName">${rest.name}</h3>
-            <p class="restThumbGenre">${rest.diningType}</p>
-            <p class="restThumbRating">${rest.rating}</p>
-        </div>
-    </li>`
+        return `
+        <li class="restThumbnails" id="${rest.id}">
+            <div class="restThumbImage">${rest.logo}</div>
+            <div class="restThumbInfoContainer">
+                <h3 class="restThumbName">${rest.name}</h3>
+                <p class="restThumbGenre">${rest.diningType}</p>
+                <p class="restThumbRating">${rest.rating}</p>
+            </div>
+        </li>`
     });
     let restThumbnailHTML = displayRestaurants.join('');
     restaurantList.innerHTML = restThumbnailHTML;
 }
+
+// Display Restaurant Home Page
+function displayRestaurantHome(restID) {
+    let currentRestaurant = restaurants[`${restID - 1}`];
+    return `
+    <h3 class="">${currentRestaurant.name}</h3>
+    <img src="${currentRestaurant.logo}" alt="">
+    <p class="">${currentRestaurant.genre}</p>
+    <p class="">${currentRestaurant.diningType}</p>
+    <p class="">${currentRestaurant.rating}</p>
+    <p class="">${currentRestaurant.location}</p>
+    <p class="">${currentRestaurant.miniBio}</p>
+    <p class="">${currentRestaurant.hours}</p>
+    `
+}
+
+homeButton.addEventListener('click', function() {
+    restHomePage.classList.remove('activePage');
+    splashPage.classList.add('activePage');
+})
 
 
 
@@ -170,7 +193,8 @@ window.addEventListener('DOMContentLoaded', function() {
         rest.addEventListener('click', function() {
             splashPage.classList.remove('activePage');
             restHomePage.classList.add('activePage');
-            displayRestHome();
+            let restaurantHomeHTML = displayRestaurantHome(`${rest.id}`);
+            restHomeContainer.innerHTML = restaurantHomeHTML;
         })
     });
 
