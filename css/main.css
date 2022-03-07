@@ -2,12 +2,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 :root {
     --red: red;
     --green: green;
     --blue: blue;
+    --logoMain: #982F2F;
+    --lightGrey: #CCCCCC;
+    --darkGrey: #464646;
+    --white: #FFFFFF;
 }
 
 section {
@@ -69,8 +74,8 @@ li {
     }
     main {
         background-color: white;
-        height: 35rem;
-        width: 50rem;
+        height: 75vh;
+        width: 70vw;
         border-radius: 1rem;
     }
     .activePage {
@@ -86,17 +91,25 @@ li {
         display: grid;
         padding: 1rem;
         grid-template-columns: 20% 80%;
-        grid-template-rows: 8% 92%;
+        grid-template-rows: 10% 90%;
         grid-template-areas: 
-        'filter search'
+        'logo search'
         'filter rest'
         ;
+    }
+    .logo {
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--logoMain);
     }
     .filterBar {
         grid-area: filter;
         width: 100%;
         padding: 1rem 0.75rem;
-        border: 1px solid orange;
+        border: 1px solid var(--lightGrey);
+        border-radius: 5px;
     }
     .filterSection {
         position: relative;
@@ -104,14 +117,15 @@ li {
         flex-direction: column;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
+        color: var(--darkGrey)
     }
     .filterSection::after {
         content: '';
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 0.1rem;
-        background-color: grey;
+        height: 1px;
+        background-color: var(--lightGrey);
     }
     .filterMiniBox {
         display: flex;
@@ -122,50 +136,90 @@ li {
     .filterMiniBox > input {
         margin-right: 0.5rem;
     }
+    .clearFilters {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+        color: var(--darkGrey);
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
     .searchBox {
         grid-area: search;
+        display: flex;
+        align-items: center;
     }
     .searchBar {
         position: relative;
         width: 100%;
-        height: 100%;
-        padding: 0.5rem;
+        padding: 0.35rem;
         font-size: 1rem;
     }
     .restContainer {
         grid-area: rest;
         width: 100%;
         height: 100%;
+        padding: 0rem 1rem;
     }
     .restList {
-        padding: 1rem 0rem;
+        padding: 0.35rem 0rem;
         height: 100%;
         width: 100%;
-        border: 1px solid purple;
+        /* border: 1px solid purple; */
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     /* THUMBNAIL STYLING */
     .restThumbnails {
-        width: 47%;
-        height: 6rem;
+        cursor: pointer;
+        position: relative;
+        width: 49%;
+        height: 7rem;
         background-color: coral;
         border-radius: 0.5rem;
-        border: 1px solid purple;
 
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
+        overflow: hidden;
     }
-    .restThumbImage {
-        background-color: pink;
-        height: 100%;
-        width: 50%;
+    .restMainImage {
+        object-fit: cover;
+        width: 100%;
     }
     .restThumbInfo {
-        width: 50%;
-        padding: 0rem 0.5rem;
+        position: absolute;
+        right: 2%;
+        bottom: 4%;
+        background-color: var(--white);
+        padding: 0.3rem 0.5rem;
+        height: 3rem;
+        width: 70%;
+        border-radius: 5px;
+    }
+    .restThumbName {
+        font-size: 1rem;
+        color: var(--logoMain);
+    }
+    .diningGenre {
+        font-size: 0.75rem;
+        color: var(--darkGrey);
+        font-weight: 400;
+    }
+    .restLocationBox {
+        display: flex;
+        align-items: center;
+    }
+    .locationIcon {
+        width: 15px;
+        height: 15px;
+    }
+    .restLocationString {
+        font-size: 0.65rem;
+        color: var(--darkGrey);
     }
 
     /* ********** RESTAURANT HOME STYLING ********** */
