@@ -7,17 +7,16 @@ let restaurants = [
         name: 'Five Vines',
         logo: './images/logo-fiveVines.png',
         images: [
-            './images/restImages/fiveVines1-sidePlate.png',
-            './images/restImages/fiveVines2-topDown.png',
-            './images/restImages/fiveVines3-pizzaTop.png'
+            './images/restImages/fiveVines1-pizzaTop.png',
+            './images/restImages/fiveVines2-sidePlate.png',
+            './images/restImages/fiveVines3-topDown.png'
         ],
         meals: 'Dinner',
         diningType: ['RESERVATIONS', 'TAKEOUT'],
+        diningGenre: 'Italian, Contemporary',
         priceRange: '$$',
         rating: 4,
-        street: '2354 Longlane St',
-        city: 'Toronto, ON',
-        postalCode: 'M4B 124',
+        location: '2354 Longlane St, Toronto, ON, M4B 124',
         miniBio: 'Enjoy a truly authentic Italian dining experience at Five Vines. With ingredients sourced from Italy, such as winemakers, meat and artisinal cheese producers and so much more.',
         hours: {
             mon: {
@@ -80,7 +79,7 @@ let restaurants = [
             mains: [
                 {
                     name: 'Lasagna',
-                    desc: 'Layers of fresh pasta, slow braised ground meat sauce, provolone and mozzarella cheese and Bella Notte Tomato Sauce',
+                    desc: 'Layers of fresh pasta, slow braised ground meat sauce, provolone and mozzarella cheese and Five Vines Tomato Sauce',
                     price: 24
                 },
                 {
@@ -139,17 +138,16 @@ let restaurants = [
         name: 'Hearth Bistro',
         logo: './images/logo-hearth.png',
         images: [
-            './images/restImages/bistro1-cheesecake.png',
-            './images/restImages/bistro2-topDown.png',
+            './images/restImages/bistro1-topDown.png',
+            './images/restImages/bistro2-cheesecake.png',
             './images/restImages/bistro3-bread.png'
         ],
         meals: 'Lunch, Dinner',
         diningType: ['RESERVATIONS', 'TAKEOUT'],
+        diningGenre: 'Homestyle',
         priceRange: '$$',
         rating: 4,
-        street: '1468 Brummer St',
-        city: 'Toronto, ON',
-        postalCode: 'L8B 248',
+        location: '1468 Brummer St, Toronto, ON, L8B 248',
         miniBio: 'A symbol of warmth and welcome, Hearth and Stone Bistro is where you come to eat when you want eat out yet feel at home. ',
         hours: {
             mon: {
@@ -282,14 +280,21 @@ const restHomeButton = document.getElementById('restHomeButton');
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
         return `
-        <li class="restThumbnails" id="${rest.id}">
-            <div class="restThumbImage">${rest.logo}</div>
-            <div class="restThumbInfo">
-                <h3 class="restThumbName">${rest.name}</h3>
-                <p class="restThumbCity">${rest.city}</p>
-                <p class="restThumbRating">${rest.rating}</p>
+        <li class="restThumbnails">
+        <img src="${rest.images[0]}" alt="" class="restMainImage">
+        <div class="restThumbInfo">
+            <h3 class="restThumbName">${rest.name},<span class="diningGenre"> ${rest.diningGenre}</span></h3>
+            <div class="restLocationBox">
+            <svg class="locationIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="50" height="50"
+                    viewBox="0 0 226 226"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#982f2f"><path d="M113,18.83333c-36.40483,0 -65.91667,29.51183 -65.91667,65.91667c0,37.3465 41.471,92.47167 58.62817,113.66858c3.76667,4.65183 10.81033,4.65183 14.577,0c17.15717,-21.19692 58.62817,-76.32208 58.62817,-113.66858c0,-36.40483 -29.51183,-65.91667 -65.91667,-65.91667zM113,108.29167c-13.00442,0 -23.54167,-10.53725 -23.54167,-23.54167c0,-13.00442 10.53725,-23.54167 23.54167,-23.54167c13.00442,0 23.54167,10.53725 23.54167,23.54167c0,13.00442 -10.53725,23.54167 -23.54167,23.54167z"></path></g></g></svg>
+                <p class="restLocationString">${rest.location}</p>
             </div>
-        </li>`
+            
+            
+        </div>
+    </li>`
     });
     let restThumbnailHTML = displayRestaurants.join('');
     restaurantList.innerHTML = restThumbnailHTML;

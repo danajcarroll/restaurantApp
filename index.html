@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RestWatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <main>
         <section id="splashPage" class="activePage">
+            <div class="logo"><h1 class="logo">FoodFind</h1><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#982f2f"><path d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z"></path></g></g></svg></div>
             <div class="filterBar">
                 <div class="filterSection diningType">
                     <div class="filterMiniBox">
@@ -64,6 +71,9 @@
                         <label for="dinner">Dinner</label>
                     </div>
                 </div>
+                <div class="clearFilters">
+                    <p>Clear all filters</p>
+                </div>
             </div> <!-- end of filter bar -->
 
             <div class="searchBox">
@@ -72,14 +82,16 @@
             <div class="restContainer">
                 <ul class="restList" id="restList">
     
-                    <li class="restThumbnails">
-                        <div class="restThumbImage"></div>
+                    <!-- <li class="restThumbnails">
+                        <img src="images/restImages/fiveVines1-pizzaTop.png" alt="" class="restMainImage">
                         <div class="restThumbInfo">
-                            <h3 class="restThumbName">Five Vines</h3>
-                            <p class="restThumbCity">Casual Dining</p>
-                            <p class="restThumbRating">4</p>
+                            <h3 class="restThumbName">Five Vines,<span class="diningGenre"> Italian, Contemporary</span></h3>
+                            <p class="restLocationString"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                width="50" height="50"
+                                viewBox="0 0 226 226"
+                                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#982f2f"><path d="M113,18.83333c-36.40483,0 -65.91667,29.51183 -65.91667,65.91667c0,37.3465 41.471,92.47167 58.62817,113.66858c3.76667,4.65183 10.81033,4.65183 14.577,0c17.15717,-21.19692 58.62817,-76.32208 58.62817,-113.66858c0,-36.40483 -29.51183,-65.91667 -65.91667,-65.91667zM113,108.29167c-13.00442,0 -23.54167,-10.53725 -23.54167,-23.54167c0,-13.00442 10.53725,-23.54167 23.54167,-23.54167c13.00442,0 23.54167,10.53725 23.54167,23.54167c0,13.00442 -10.53725,23.54167 -23.54167,23.54167z"></path></g></g></svg>1534 Longlane St, Toronto, ON, M4B 124</p>
                         </div>
-                    </li>
+                    </li> -->
     
                 </ul>
             </div>
