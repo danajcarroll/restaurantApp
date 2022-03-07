@@ -7,12 +7,13 @@ let restaurants = [
         name: 'Five Vines',
         logo: './images/logo-fiveVines.png',
         images: [
-            '',
-            '',
-            ''
+            './images/restImages/fiveVines1-sidePlate.png',
+            './images/restImages/fiveVines2-topDown.png',
+            './images/restImages/fiveVines3-pizzaTop.png'
         ],
-        genre: 'Casual Dining',
-        diningType: ['Reservations', 'Pick Up'],
+        meals: 'Dinner',
+        diningType: ['RESERVATIONS', 'TAKEOUT'],
+        priceRange: '$$',
         rating: 4,
         street: '2354 Longlane St',
         city: 'Toronto, ON',
@@ -138,14 +139,14 @@ let restaurants = [
         name: 'Hearth Bistro',
         logo: './images/logo-hearth.png',
         images: [
-            '',
-            '',
-            ''
+            './images/restImages/bistro1-cheesecake.png',
+            './images/restImages/bistro2-topDown.png',
+            './images/restImages/bistro3-bread.png'
         ],
-        genre: 'Fast Casual Dining',
-        diningType: ['Reservations', 'Pick Up'],
+        meals: 'Lunch, Dinner',
+        diningType: ['RESERVATIONS', 'TAKEOUT'],
+        priceRange: '$$',
         rating: 4,
-        location: '1468 Brummer St',
         street: '1468 Brummer St',
         city: 'Toronto, ON',
         postalCode: 'L8B 248',
@@ -309,6 +310,7 @@ function displayRestaurantHome(restID) {
     `
 }
 
+// Button Event Listeners
 homeButton.addEventListener('click', function() {
     restHomePage.classList.remove('activePage');
     splashPage.classList.add('activePage');
