@@ -286,6 +286,7 @@ li {
     }
     .activeTab {
         background-color: pink;
+        transition: 0.5s;
     }
 
     /* ABOUT SECTION */
@@ -381,6 +382,58 @@ li {
         display: flex;
         width: 60%;
         justify-content: space-between;
+    }
+
+
+    /* ********** RESTAURANT MENU STYLING ********** */
+    .restaurantMenu {
+        display: none;
+        height: 100%;
+    }
+    .foodBox {
+        position: relative;
+        /* border: 1px red solid; */
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        padding: 0rem 0.75rem;
+    }
+    .foodBox::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        margin-left: -25%;
+        width: 50%;
+        height: 1px;
+        background-color: var(--lightGrey);
+    }
+    .foodType, .mealName, .mealPrice {
+        font-weight: 400;
+    }
+    .foodType {
+        color: var(--logoMain);
+        padding-bottom: 0.75rem;
+    }
+    .mealList {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .mealItem {
+        /* border: 1px solid orange; */
+        width: 47%;
+        padding-bottom: 1rem;
+    }
+    .namePrice {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0.35rem;
+        font-size: 0.85rem;
+    }
+    .mealDesc {
+        color: var(--darkGrey);
+        font-size: 0.95rem;
     }
 
 

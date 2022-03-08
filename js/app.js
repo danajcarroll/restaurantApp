@@ -270,18 +270,22 @@ let restaurants = [
 
 const splashPage = document.getElementById('splashPage');
 const restHomePage = document.getElementById('restHome');
-const restMenuPage = document.getElementById('restMenu');
 const restaurantList = document.getElementById('restList');
 const restHomeContainer = document.getElementById('restaurantHomeContainer');
+const restMenu = document.getElementById('restaurantMenu');
 const homeButton = document.getElementById('homeButton');
-const viewMenuButton = document.getElementById('viewMenuButton');
+const menuButton = document.getElementById('menuButton');
+const aboutButton = document.getElementById('aboutButton');
 const restHomeButton = document.getElementById('restHomeButton');
-// There's going to be 2 of these, 1 on menu and 1 on restHome, should probably be class and run a loop?
-const restHeadTitles = document.getElementsByClassName('restTitle');
-const restHeadGenres = document.getElementsByClassName('restHeaderGenre');
+const restHeadTitles = document.getElementById('restHeadTitle');
+const restHeadGenres = document.getElementById('restHeaderGenre');
 
-const restTitles = [...restHeadTitles];
-const restGenres = [...restHeadGenres];
+// Menu Lists
+const appetizers = document.getElementById('appetizerList');
+const mains = document.getElementById('mainList');
+const desserts = document.getElementById('dessertList');
+
+
 
 
 // Display Restaurants on Splash Page
@@ -308,12 +312,16 @@ function displayRestaurantThumbnails() {
     restaurantList.innerHTML = restThumbnailHTML;
 }
 
+// Display Restaurant Header
+function displayRestaurantHeader(rest) {
+    restHeadTitles.innerHTML = `${rest.name}<span class="restHeaderGenre ${rest.id}" id="restHeadGenre"> ${rest.diningGenre}</span>`;
+}
+
 // Display Restaurant Home Page
 function displayRestaurantHome(restID) {
     let currRest = restaurants[`${restID - 1}`];
-    restTitles.forEach(element => {
-        element.innerHTML = `${currRest.name}<span class="restHeaderGenre" id="restHeadGenre"> ${currRest.diningGenre}</span>`;
-    });
+    let {hours: restHours} = currRest;
+    displayRestaurantHeader(currRest);
     return `
     <div class="restImageGallery">
         <div class="restImage">
@@ -362,29 +370,82 @@ function displayRestaurantHome(restID) {
         </div>
         <div class="hoursBox">
             <div class="hoursMiniBox">
-                <p class="dayBox">MON</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">MON</p><p class="hourBox">${restHours.mon.open} - ${restHours.mon.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">TUE</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">TUE</p><p class="hourBox">${restHours.tues.open} - ${restHours.tues.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">WED</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">WED</p><p class="hourBox">${restHours.wed.open} - ${restHours.wed.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">THUR</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">THUR</p><p class="hourBox">${restHours.thur.open} - ${restHours.thur.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">FRI</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">FRI</p><p class="hourBox">${restHours.fri.open} - ${restHours.fri.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">SAT</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">SAT</p><p class="hourBox">${restHours.sat.open} - ${restHours.sat.close}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">SUN</p><p class="hourBox">3pm - 10pm</p>
+                <p class="dayBox">SUN</p><p class="hourBox">${restHours.sun.open} - ${restHours.sun.close}</p>
             </div>
         </div>
     </div>
     `
+}
+
+// Display Restaurant Menu
+function displayRestaurantAppetizers(restID) {
+    let currRest = restaurants[`${restID - 1}`];
+    let appetizerArray = currRest.menu.starters;
+    let displayAppetizers = appetizerArray.map(function(app) {
+        return `
+        <li class="mealItem">
+            <div class="namePrice">
+                <h2 class="mealName">${app.name}</h2>
+                <h2 class="mealPrice">$${app.price}</h2>
+            </div>
+            <p class="mealDesc">${app.desc}</p>
+        </li>
+        `
+    });
+    let appetizerText = displayAppetizers.join('');
+    return appetizerText;
+}
+function displayRestaurantMains(restID) {
+    let currRest = restaurants[`${restID - 1}`];
+    let mainsArray = currRest.menu.mains;
+    let displayMains = mainsArray.map(function(main) {
+        return `
+        <li class="mealItem">
+            <div class="namePrice">
+                <h2 class="mealName">${main.name}</h2>
+                <h2 class="mealPrice">$${main.price}</h2>
+            </div>
+            <p class="mealDesc">${main.desc}</p>
+        </li>
+        `
+    });
+    let mainText = displayMains.join('');
+    return mainText;
+}
+function displayRestaurantDesserts(restID) {
+    let currRest = restaurants[`${restID - 1}`];
+    let dessertsArray = currRest.menu.desserts;
+    let displaydesserts = dessertsArray.map(function(dess) {
+        return `
+        <li class="mealItem">
+            <div class="namePrice">
+                <h2 class="mealName">${dess.name}</h2>
+                <h2 class="mealPrice">$${dess.price}</h2>
+            </div>
+            <p class="mealDesc">${dess.desc}</p>
+        </li>
+        `
+    });
+    let dessertText = displaydesserts.join('');
+    return dessertText;
 }
 
 // Button Event Listeners
@@ -394,16 +455,19 @@ homeButton.addEventListener('click', function() {
     splashPage.style.display = 'grid';
     restHomePage.style.display = 'none';
 });
-viewMenuButton.addEventListener('click', function() {
-    restHomePage.classList.remove('activePage');
-    restMenuPage.classList.add('activePage');
-    restHomePage.style.display = 'none';
-});
-restHomeButton.addEventListener('click', function() {
-    restMenuPage.classList.remove('activePage');
-    restHomePage.classList.add('activePage');
-    restHomePage.style.display = 'flex';
-});
+aboutButton.addEventListener('click', function() {
+    aboutButton.classList.add('activeTab');
+    menuButton.classList.remove('activeTab');
+    restHomeContainer.style.display = 'none';
+    restMenu.style.display = 'grid';
+})
+menuButton.addEventListener('click', function() {
+    menuButton.classList.add('activeTab');
+    aboutButton.classList.remove('activeTab');
+    restHomeContainer.style.display = 'grid';
+    restMenu.style.display = 'none';
+})
+
 
 
 
@@ -413,17 +477,22 @@ window.addEventListener('DOMContentLoaded', function() {
     displayRestaurantThumbnails(restaurants);
     const restaurantThumbnails = [...document.getElementsByClassName('restThumbnails')];
 
-    console.log(restaurantThumbnails);
-
     // Clicking restThumbnail, changing to restHomePage
     restaurantThumbnails.forEach(rest => {
         rest.addEventListener('click', function() {
+            // hide splash page
             splashPage.classList.remove('activePage');
             splashPage.style.display = 'none';
+            // should rest page
             restHomePage.classList.add('activePage');
             restHomePage.style.display = 'flex';
+            // fill restaurant info
             let restaurantHomeHTML = displayRestaurantHome(`${rest.id}`);
             restHomeContainer.innerHTML = restaurantHomeHTML;
+            // fill menu info
+            appetizers.innerHTML = displayRestaurantAppetizers(`${rest.id}`);
+            mains.innerHTML = displayRestaurantMains(`${rest.id}`);
+            desserts.innerHTML = displayRestaurantDesserts(`${rest.id}`);
         })
     });
 
