@@ -24,29 +24,816 @@ section {
 li {
     list-style-type: none;
 }
-/* #splashPage {
-    background-color: aquamarine;
-}
-#restHome {
-    background-color: greenyellow;
-}
-#restMenu {
-    background-color: fuchsia;
-} */
 
 /* Media Query for Mobile Devices */
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
     body {
-        background-color: red;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-} */
+    main {
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        /* border: 1px solid red; */
+    }
+    .activePage {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+        /* border: 1px solid orange; */
+    }
+    /* ********** SPLASH PAGE ********** */
+    #splashPage {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: auto;
+        grid-template-rows: 5% 8% auto 2fr;
+        grid-row-gap: 0.25rem;
+        grid-template-areas: 
+        'logo'
+        'search'
+        'filter'
+        'rest'
+        ;
+    }
+    .logo {
+        /* width: 100%; */
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--logoMain);
+    }
+    .filterContainer {
+        grid-area: filter;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .filterButton {
+        display: inline-block;
+        padding: 0.25rem 1.5rem;
+        background-color: pink;
+        border-radius: 5px;
+    }
+    .filterBar {
+        display: none;
+        width: 100%;
+        padding: 1rem 0.75rem;
+        border: 1px solid var(--lightGrey);
+        border-radius: 5px;
+    }
+    .filterSection {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: var(--darkGrey)
+    }
+    .filterSection::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--lightGrey);
+    }
+    .filterMiniBox {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 0.25rem;
+    }
+    .filterMiniBox > input {
+        margin-right: 0.5rem;
+    }
+    .clearFilters {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+        color: var(--darkGrey);
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+    .searchBox {
+        grid-area: search;
+        display: flex;
+        align-items: center;
+    }
+    .searchBar {
+        position: relative;
+        width: 100%;
+        padding: 0.35rem;
+        font-size: 1rem;
+    }
+    .restContainer {
+        grid-area: rest;
+        width: 100%;
+        height: 100%;
+        /* padding: 0rem 1rem; */
+    }
+    .restList {
+        padding: 0.35rem 0rem;
+        height: 100%;
+        width: 100%;
+        /* border: 1px solid purple; */
+        /* display: flex;
+        flex-direction: column;
+        justify-content: space-between; */
+    }
+    /* THUMBNAIL STYLING */
+    .restThumbnails {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        height: 7rem;
+        background-color: coral;
+        border-radius: 0.5rem;
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+    .restMainImage {
+        object-fit: cover;
+        max-width: 100%;
+    }
+    .restThumbInfo {
+        position: absolute;
+        transform-origin: center;
+        left: 3%;
+        bottom: 4%;
+        background-color: var(--white);
+        padding: 0.3rem 0.5rem;
+        /* margin: 0rem 0.5rem; */
+        height: 3rem;
+        width: 94%;
+        border-radius: 5px;
+    }
+    .restThumbName {
+        font-size: 1rem;
+        color: var(--logoMain);
+    }
+    .diningGenre {
+        font-size: 0.75rem;
+        color: var(--darkGrey);
+        font-weight: 400;
+    }
+    .restLocationBox {
+        display: flex;
+        align-items: center;
+    }
+    .locationIcon {
+        width: 15px;
+        height: 15px;
+    }
+    .restLocationString {
+        font-size: 0.65rem;
+        color: var(--darkGrey);
+    }
+    /* ********** RESTAURANT HOME STYLING ********** */
+    #restHome {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .restHeader {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0rem;
+    }
+    .topBar {
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding: 0.25rem 0rem 0.5rem 0rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .topBar::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: var(--lightGrey);
+        bottom: 0;
+
+    }
+    .homeButton {
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+    }
+    .homeButton svg {
+        display: flex;
+        height: 2.5rem;
+        align-items: center;
+        margin-right: 3rem;
+    }
+    .restTitleBox {
+        align-items: baseline;
+    }
+    .restTitle {
+        color: var(--logoMain);
+        font-size: 2rem;
+        text-align: center;
+    }
+    .restHeaderGenre {
+        color: var(--darkGrey);
+        font-size: 1rem;
+        font-weight: 400;
+        display: block;
+    }
+    .restAboutMenuBar {
+        /* border: 1px solid purple; */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0rem 0rem 0rem;
+    }
+    .restTabButton {
+        width: 49%;
+        border: none;
+        padding: 0.35rem 0rem;
+        font-size: 1rem;
+        background-color: var(--lightGrey);
+        border-radius: 5px;
+    }
+    .activeTab {
+        background-color: pink;
+        transition: 0.5s;
+    }
+
+    /* ABOUT SECTION */
+    .restaurantHomeContainer {
+        height: 100%;
+        width: 100%;
+        font-size: 0.9rem;
+        /* padding: 0.5rem; */
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns:  1.5fr repeat(2, minmax(0, 1fr));
+        grid-template-rows: 40% 60%;
+        grid-template-areas: 
+        'images images images'
+        'bio bio bio'
+        ; */
+    }
+    .restHeader {
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+    .restImageGallery {
+        grid-area: images;
+        width: 100%;
+        height: 6rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .restImage {
+        width: 32%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .restImage img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bioBox {
+        width: 100%;
+        grid-area: bio;
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: 67% 33%;
+        grid-template-rows: 15% 45% 40%;
+        grid-template-areas: 
+        'diningType hours'
+        'mealType hours'
+        'textBio hours'
+        ; */
+        padding: 0.75rem 0rem 0.25rem 0rem;
+    }
+    .diningTypeBox {
+        grid-area: diningType;
+        display: flex;
+        align-items: center;
+    }
+    .diningTag {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        background-color: rgb(252, 137, 156);
+        border-radius: 0.25rem;
+        margin-right: 0.75rem;
+        height: 100%;
+    }
+    .genreBox {
+        grid-area: mealType;
+        height: 100%;
+        padding-top: 0.5rem;
+    }
+    .mealTypeBox {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.5rem;
+    }
+    .mealTypeBox p {
+        padding-left: 0.25rem;
+    }
+    .mealIcon {
+        height: 1.25rem;
+        width: auto;
+    }
+    .miniBioBox {
+        position: relative;
+        padding-top: 0.5rem;
+        padding: 0.5rem 0rem 1rem 0rem;
+        font-size: 0.9rem;
+    }
+    .miniBioBox::after {    position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: var(--lightGrey);
+        bottom: 0;
+    }
+    .hoursBox {
+        grid-area: hours;
+        /* width: 60%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1rem;
+    }
+    .hoursMiniBox {
+        display: flex;
+        width: 75%;
+        padding-bottom: 0.25rem;
+        justify-content: space-between;
+    }
+
+
+    /* ********** RESTAURANT MENU STYLING ********** */
+    .restaurantMenu {
+        display: none;
+        height: 100%;
+        overflow: hidden scroll;
+    }
+    .foodBox {
+        position: relative;
+        /* border: 1px red solid; */
+        margin-bottom: 0.5rem;
+        padding: 0rem 0rem 0.5rem 0rem;
+    }
+    .foodBox::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        margin-left: -25%;
+        width: 50%;
+        height: 1px;
+        background-color: var(--lightGrey);
+    }
+    .foodType, .mealName, .mealPrice {
+        font-weight: 400;
+    }
+    .foodType {
+        color: var(--logoMain);
+        padding-bottom: 0.75rem;
+    }
+    .mealList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .mealItem {
+        /* border: 1px solid orange; */
+        width: 100%;
+        padding-bottom: 1.25rem;
+    }
+    .namePrice {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0.35rem;
+        font-size: 0.8rem;
+    }
+    .mealDesc {
+        color: var(--darkGrey);
+        font-size: 0.85rem;
+    }
+
+
+
+
+
+}
 
 /* Media Query for low resolution  Tablets, Ipads */
-/* @media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     body {
-        background-color: yellow;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: lightpink; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-} */
+    main {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    .activePage {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        /* border: 1px solid orange; */
+    }
+    /* ********** SPLASH PAGE ********** */
+    #splashPage {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 5% 95%;
+        grid-template-areas: 
+        'logo search'
+        'filter rest'
+        ;
+    }
+    .logo {
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--logoMain);
+    }
+    .filterBar {
+        grid-area: filter;
+        width: 100%;
+        padding: 1rem 0.75rem;
+        border: 1px solid var(--lightGrey);
+        border-radius: 5px;
+    }
+    .filterSection {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: var(--darkGrey)
+    }
+    .filterSection::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--lightGrey);
+    }
+    .filterMiniBox {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 0.25rem;
+    }
+    .filterMiniBox > input {
+        margin-right: 0.5rem;
+    }
+    .clearFilters {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+        color: var(--darkGrey);
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+    .searchBox {
+        grid-area: search;
+        display: flex;
+        align-items: center;
+    }
+    .searchBar {
+        position: relative;
+        width: 100%;
+        padding: 0.35rem;
+        font-size: 1rem;
+    }
+    .restContainer {
+        grid-area: rest;
+        width: 100%;
+        height: 100%;
+        padding: 0rem 1rem;
+    }
+    .restList {
+        padding: 0.35rem 0rem;
+        height: 100%;
+        width: 100%;
+        /* border: 1px solid purple; */
+        display: flex;
+        justify-content: space-between;
+    }
+    /* THUMBNAIL STYLING */
+    .restThumbnails {
+        cursor: pointer;
+        position: relative;
+        width: 49%;
+        height: 12rem;
+        background-color: coral;
+        border-radius: 0.5rem;
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+    .restMainImage {
+        object-fit: cover;
+    }
+    .restThumbInfo {
+        position: absolute;
+        transform-origin: center;
+        left: 3%;
+        bottom: 4%;
+        background-color: var(--white);
+        padding: 0.3rem 0.5rem;
+        /* margin: 0rem 0.5rem; */
+        height: 3rem;
+        width: 94%;
+        border-radius: 5px;
+    }
+    .restThumbName {
+        font-size: 1rem;
+        color: var(--logoMain);
+    }
+    .diningGenre {
+        font-size: 0.75rem;
+        color: var(--darkGrey);
+        font-weight: 400;
+    }
+    .restLocationBox {
+        display: flex;
+        align-items: center;
+    }
+    .locationIcon {
+        width: 15px;
+        height: 15px;
+    }
+    .restLocationString {
+        font-size: 0.65rem;
+        color: var(--darkGrey);
+    }
+    /* ********** RESTAURANT HOME STYLING ********** */
+    #restHome {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .restHeader {
+        display: flex;
+        flex-direction: column;
+    }
+    .topBar {
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding: 0.25rem 0rem 0.5rem 0rem;
+    }
+    .topBar::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: var(--lightGrey);
+        bottom: 0;
+
+    }
+    .homeButton {
+        cursor: pointer;
+    }
+    .homeButton svg {
+        display: flex;
+        height: 2.5rem;
+        align-items: center;
+        margin-right: 3rem;
+    }
+    .restTitleBox {
+        display: flex;
+        align-items: baseline;
+    }
+    .restTitle {
+        color: var(--logoMain);
+        font-size: 2rem;
+    }
+    .restHeaderGenre {
+        color: var(--darkGrey);
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .restAboutMenuBar {
+        /* border: 1px solid purple; */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0rem 0rem 0rem;
+    }
+    .restTabButton {
+        width: 49%;
+        border: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        background-color: var(--lightGrey);
+        border-radius: 5px;
+    }
+    .activeTab {
+        background-color: pink;
+        transition: 0.5s;
+    }
+
+    /* ABOUT SECTION */
+    .restaurantHomeContainer {
+        height: 50%;
+        width: 100%;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns:  1.5fr repeat(2, minmax(0, 1fr));
+        grid-template-rows: 40% 60%;
+        grid-template-areas: 
+        'images images images'
+        'bio bio bio'
+        ;
+    }
+    .restHeader {
+        padding: 0.5rem 0rem;
+        display: flex;
+        align-items: center;
+    }
+    .restImageGallery {
+        grid-area: images;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .restImage {
+        width: 32%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .restImage img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .bioBox {
+        width: 100%;
+        grid-area: bio;
+        display: grid;
+        grid-template-columns: 67% 33%;
+        grid-template-rows: 15% 45% 40%;
+        grid-template-areas: 
+        'diningType hours'
+        'mealType hours'
+        'textBio hours'
+        ;
+        padding: 0.75rem 0rem 0.25rem 0rem;
+    }
+    .diningTypeBox {
+        grid-area: diningType;
+        display: flex;
+        align-items: center;
+    }
+    .diningTag {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        background-color: rgb(252, 137, 156);
+        border-radius: 0.25rem;
+        margin-right: 0.75rem;
+        height: 100%;
+    }
+    .genreBox {
+        grid-area: mealType;
+        height: 100%;
+        padding-top: 0.5rem;
+    }
+    .mealTypeBox {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.5rem;
+    }
+    .mealIcon {
+        height: 1.75rem;
+    }
+    .miniBioBox {
+        padding-top: 0.5rem;
+        font-size: 1.05rem;
+    }
+    .hoursBox {
+        grid-area: hours;
+        /* width: 60%; */
+        /* height: 80%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0rem 1rem;
+    }
+    .hoursMiniBox {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    /* ********** RESTAURANT MENU STYLING ********** */
+    .restaurantMenu {
+        display: none;
+        height: 100%;
+        overflow: hidden scroll;
+    }
+    .foodBox {
+        position: relative;
+        /* border: 1px red solid; */
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 0.75rem 1rem 0.75rem;
+    }
+    .foodBox::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        margin-left: -25%;
+        width: 50%;
+        height: 1px;
+        background-color: var(--lightGrey);
+    }
+    .foodType, .mealName, .mealPrice {
+        font-weight: 400;
+    }
+    .foodType {
+        color: var(--logoMain);
+        padding-bottom: 0.75rem;
+    }
+    .mealList {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .mealItem {
+        /* border: 1px solid orange; */
+        width: 47%;
+        padding-bottom: 1rem;
+    }
+    .namePrice {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0.35rem;
+        font-size: 0.85rem;
+    }
+    .mealDesc {
+        color: var(--darkGrey);
+        font-size: 0.95rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 /* Media Query for Tablets Ipads portrait mode */
 /* @media (min-width: 768px) and (max-width: 1024px){
@@ -55,12 +842,14 @@ li {
     }
 } */
 
-/* Media Query for Laptops and Desktops */
-/* @media (min-width: 1025px) and (max-width: 1280px){
-    body {
-        background-color: green;
-    }
-} */
+
+
+
+
+
+
+
+
 
 /* Media Query for Large screens */
 @media (min-width: 1281px) {
@@ -389,13 +1178,13 @@ li {
     .restaurantMenu {
         display: none;
         height: 100%;
+        overflow: hidden scroll;
     }
     .foodBox {
         position: relative;
         /* border: 1px red solid; */
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        padding: 0rem 0.75rem;
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 0.75rem 1rem 0.75rem;
     }
     .foodBox::after {
         position: absolute;

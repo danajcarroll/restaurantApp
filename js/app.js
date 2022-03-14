@@ -150,7 +150,7 @@ let restaurants = [
         number: '416-784-9735',
         rating: 4,
         location: '1468 Brummer St, Toronto, ON, L8B 248',
-        miniBio: 'A symbol of warmth and welcome, Hearth and Stone Bistro is where you come to eat when you want eat out yet feel at home. ',
+        miniBio: 'Hearth and Stone Bistro is a symbol of warmth and welcome. Catch up with old friends or spend time with loved ones. You can visit our Bistro when you want to go out and feel right at home.',
         hours: {
             mon: {
                 open: '11am',
@@ -459,12 +459,13 @@ aboutButton.addEventListener('click', function() {
     aboutButton.classList.add('activeTab');
     menuButton.classList.remove('activeTab');
     restHomeContainer.style.display = 'none';
-    restMenu.style.display = 'grid';
+    restMenu.style.display = 'block';
 })
 menuButton.addEventListener('click', function() {
     menuButton.classList.add('activeTab');
     aboutButton.classList.remove('activeTab');
-    restHomeContainer.style.display = 'grid';
+    // restHomeContainer.style.display = 'flex';
+    window.innerWidth <= 480 ? restHomeContainer.style.display = 'flex' : restHomeContainer.style.display = 'grid';
     restMenu.style.display = 'none';
 })
 
