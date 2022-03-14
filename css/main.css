@@ -490,6 +490,9 @@ li {
         align-items: center;
         color: var(--logoMain);
     }
+    .filterButton {
+        display: none;
+    }
     .filterBar {
         grid-area: filter;
         width: 100%;
@@ -551,11 +554,10 @@ li {
     }
     .restList {
         padding: 0.35rem 0rem;
-        height: 100%;
         width: 100%;
-        /* border: 1px solid purple; */
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     /* THUMBNAIL STYLING */
     .restThumbnails {
@@ -893,6 +895,9 @@ li {
         align-items: center;
         color: var(--logoMain);
     }
+    .filterButton {
+        display: none;
+    }
     .filterBar {
         grid-area: filter;
         width: 100%;
@@ -954,11 +959,11 @@ li {
     }
     .restList {
         padding: 0.35rem 0rem;
-        height: 100%;
         width: 100%;
         /* border: 1px solid purple; */
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     /* THUMBNAIL STYLING */
