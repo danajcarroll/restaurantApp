@@ -346,11 +346,15 @@ li {
         border-radius: 0.25rem;
         margin-right: 0.75rem;
         height: 100%;
+        text-transform: uppercase;
     }
     .genreBox {
         grid-area: mealType;
         height: 100%;
         padding-top: 1rem;
+    }
+    .mealText {
+        text-transform: capitalize;
     }
     .mealTypeBox {
         display: flex;

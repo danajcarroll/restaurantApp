@@ -11,10 +11,10 @@ let restaurants = [
             './images/restImages/fiveVines2-sidePlate.png',
             './images/restImages/fiveVines3-topDown.png'
         ],
-        meals: 'Dinner',
-        diningType: ['RESERVATIONS', 'TAKEOUT'],
+        meals: ['dinner'],
+        diningType: ['reservations', 'takeout'],
         diningGenre: ['Italian, Contemporary'],
-        priceRange: '$$',
+        priceRange: 'affordable',
         number: '416-334-2512',
         rating: 4,
         location: '2354 Longlane St, Toronto, ON, M4B 124',
@@ -143,10 +143,10 @@ let restaurants = [
             './images/restImages/bistro2-cheesecake.png',
             './images/restImages/bistro3-bread.png'
         ],
-        meals: 'Lunch, Dinner',
-        diningType: ['RESERVATIONS', 'TAKEOUT'],
+        meals: ['lunch', 'dinner'],
+        diningType: ['reservations', 'takeout'],
         diningGenre: 'Homestyle',
-        priceRange: '$$',
+        priceRange: 'affordable',
         number: '416-784-9735',
         rating: 4,
         location: '1468 Brummer St, Toronto, ON, L8B 248',
@@ -275,10 +275,10 @@ let restaurants = [
             './images/restImages/gelattes2-spongecake.png',
             './images/restImages/gelattes3-chocolate.png'
         ],
-        meals: 'Lunch',
-        diningType: ['RESERVATIONS'],
+        meals: ['lunch'],
+        diningType: ['reservations'],
         diningGenre: 'Frozen Desserts, Coffee',
-        priceRange: '$$$',
+        priceRange: 'expensive',
         number: '289-652-1363',
         rating: 4,
         location: '701 Brown St, Ajax, ON, L8B 248',
@@ -418,6 +418,20 @@ const appetizers = document.getElementById('appetizerList');
 const mains = document.getElementById('mainList');
 const desserts = document.getElementById('dessertList');
 
+// Filter Buttons
+
+const radioButtons = document.querySelectorAll('input[name="filter"]');
+// const diningTypeRadios = document.querySelectorAll('input[name="diningType"]');
+// const priceRangeRadios = document.querySelectorAll('input[name="priceRange"]');
+// const mealRadios = document.querySelectorAll('input[name="meals"]');
+const clearFilters = document.getElementById('clearFilterButton');
+
+// const [...diningTypeButtons] = diningTypeRadios;
+// const [...priceRangeButtons] = priceRangeRadios;
+// const [...mealButtons] = mealRadios;
+const [...allRadioButtons] = [...radioButtons];
+
+
 
 
 
@@ -428,7 +442,7 @@ const desserts = document.getElementById('dessertList');
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
         return `
-        <li class="restThumbnails" id="${rest.id}">
+        <li class="restThumbnails ${rest.diningType.join(' ')} ${rest.meals.join(' ')} ${rest.priceRange}" id="${rest.id}">
         <img src="${rest.images[0]}" alt="" class="restMainImage">
         <div class="restThumbInfo">
             <h3 class="restThumbName">${rest.name},<span class="diningGenre"> ${rest.diningGenre}</span></h3>
@@ -614,9 +628,11 @@ filterButton.addEventListener('click', function() {
 
 
 
+
 window.addEventListener('DOMContentLoaded', function() {
     displayRestaurantThumbnails(restaurants);
     const restaurantThumbnails = [...document.getElementsByClassName('restThumbnails')];
+    console.log(restaurantThumbnails);
 
     // Clicking restThumbnail, changing to restHomePage
     restaurantThumbnails.forEach(rest => {
@@ -636,6 +652,31 @@ window.addEventListener('DOMContentLoaded', function() {
             desserts.innerHTML = displayRestaurantDesserts(`${rest.id}`);
         })
     });
+
+
+    // Filter Buttons
+    allRadioButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            restaurantThumbnails.forEach(thumbnail => {
+                if (!thumbnail.classList.contains(`${button.id}`)) {
+                    thumbnail.style.display = 'none';
+                } else {
+                    thumbnail.style.display = 'block';
+                }
+            });
+        });
+    });
+
+
+    // Clear Filters
+    clearFilters.addEventListener('click', function() {
+        allRadioButtons.forEach(button => {
+            button.checked = false;
+        });
+        restaurantThumbnails.forEach(thumbnail => {
+            thumbnail.style.display = 'block';
+        });
+    })
 
 
 
