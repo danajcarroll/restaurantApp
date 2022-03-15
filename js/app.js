@@ -265,6 +265,136 @@ let restaurants = [
             ]
         } // End of Menu
 
+    }, // End of Restaurant
+    { // Start of restaurant
+        id: 3,
+        name: 'Gelattes',
+        logo: './images/logo-hearth.png',
+        images: [
+            './images/restImages/gelattes1-cheesecake.png',
+            './images/restImages/gelattes2-spongecake.png',
+            './images/restImages/gelattes3-chocolate.png'
+        ],
+        meals: 'Lunch',
+        diningType: ['RESERVATIONS'],
+        diningGenre: 'Frozen Desserts, Coffee',
+        priceRange: '$$$',
+        number: '289-652-1363',
+        rating: 4,
+        location: '701 Brown St, Ajax, ON, L8B 248',
+        miniBio: "Where it's okay to be hot and cold! Welcome to Gelattes, we are all about the vibe — whether it be a first date, a study sesh, or a post-gym treat.",
+        hours: {
+            mon: {
+                open: '4pm',
+                close: '11pm'
+            },
+            tues: {
+                open: '4pm',
+                close: '11pm'
+            },
+            wed: {
+                open: '4pm',
+                close: '11pm'
+            },
+            thur: {
+                open: '4pm',
+                close: '11pm'
+            },
+            fri: {
+                open: '4pm',
+                close: '12am'
+            },
+            sat: {
+                open: '4pm',
+                close: '12am'
+            },
+            sun: {
+            }
+        }, 
+        menu: {
+            starters: [
+                {
+                    name: 'Four Cheese Spinach Dip',
+                    desc: 'Made in-house creamy blend of four cheeses, spinach, red pepper and onion. Served with your choice of baked pita chips or fried pita chips',
+                    price: 14.99
+                },
+                {
+                    name: 'Buffalo Chicken Potato Skins',
+                    desc: 'Hand-cut potato wedges topped with spiced chicken tossed in our creamy buffalo wing sauce and our three cheese blend',
+                    price: 14.99
+                },
+                {
+                    name: 'Quesadilla',
+                    desc: 'Our three cheese blend, tomato, onions and jalapeño. Served with salsa and sour cream.',
+                    price: 13.49
+                },
+                {
+                    name: 'House Garlic Cheese Toast',
+                    desc: 'A gooey six cheese blend freshly-baked on two Ace Bakery French Loaf slices with garlic, topped with a sprinkle of Sriracha lime seasoning',
+                    price: 9.99
+                },
+                {
+                    name: 'Truffle Fries and Dip',
+                    desc: 'Our house russet fries topped with truffle oil, parmesan cheese, and parsley, with roasted garlic dip on the side',
+                    price: 18
+                }
+            ],
+            mains: [
+                {
+                    name: 'Classic Sirloin',
+                    desc: 'Fresh 8oz. sirloin grilled to your liking and brushed with garlic butter. Served with your choice of side and freshly steamed veggies',
+                    price: 25.99
+                },
+                {
+                    name: 'Lemon Pepper Salmon',
+                    desc: 'Atlantic salmon oven baked with a lemon pepper seasoning and paired with a basil pesto aioli. Served with your choice of side and freshly steamed veggies',
+                    price: 23.99
+                },
+                {
+                    name: 'Chicken Parm',
+                    desc: 'A hand breaded chicken breast with Parmesan cheese, topped with tomato sauce and mozzarella cheese. Served over spaghetti with your choice of tomato sauce or Alfredo sauce',
+                    price: 19.79
+                },
+                {
+                    name: 'Caesar Salad',
+                    desc: 'Chopped romaine lettuce tossed in creamy Caesar dressing and topped with double-smoked bacon, croutons and Parmesan cheese',
+                    price: 13.49
+                },
+                {
+                    name: 'Sonoma Chicken Salad',
+                    desc: 'Grilled chicken breast on fresh California greens topped with red pepper, tomato, crumbled feta cheese, raisins, croutons, mixed seeds and nuts and finished with our honey citrus dressing',
+                    price: 17.99
+                }
+            ],
+            desserts: [
+                {
+                    name: 'White Chocolate Cheesecake',
+                    desc: 'A dark chocolate cookie crumble crust filled with thick white chocolate cheesecake, with your choice of chocolate or caramel sauce',
+                    price: 7.99
+                },
+                {
+                    name: 'Funnel Cake Fries',
+                    desc: 'Golden fried strips of funnel cake topped with cinnamon sugar. Served warm with French Vanilla ice cream and choice of chocolate sauce or caramel sauce',
+                    price: 7.99
+                },
+                {
+                    name: 'Messy Cookie Sandwich',
+                    desc: 'French vanilla ice cream sandwiched between two giant freshly baked warm chocolate chip cookies. Topped with chocolate and caramel sauce',
+                    price: 8.49
+                },
+                {
+                    name: 'Chocolate Peanut Butter Tart',
+                    desc: 'Tart topped with chocolate sauce, roasted peanuts and coconut whipped cream',
+                    price: 9.98
+                },
+                {
+                    name: 'Lemon Blueberry Tart',
+                    desc: 'House-made lemon blueberry tart with lemon streusel, whipped cream and fresh blueberries',
+                    price: 9
+                }
+            ]
+        } // End of Menu
+
     } // End of Restaurant
 ];
 
@@ -280,10 +410,16 @@ const restHomeButton = document.getElementById('restHomeButton');
 const restHeadTitles = document.getElementById('restHeadTitle');
 const restHeadGenres = document.getElementById('restHeaderGenre');
 
+const filterButton = document.getElementById('filterButton');
+const filterBar = document.getElementById('filterBar');
+
 // Menu Lists
 const appetizers = document.getElementById('appetizerList');
 const mains = document.getElementById('mainList');
 const desserts = document.getElementById('dessertList');
+
+
+
 
 
 
@@ -321,6 +457,7 @@ function displayRestaurantHeader(rest) {
 function displayRestaurantHome(restID) {
     let currRest = restaurants[`${restID - 1}`];
     let {hours: restHours} = currRest;
+    console.log(restHours);
     displayRestaurantHeader(currRest);
     return `
     <div class="restImageGallery">
@@ -460,14 +597,17 @@ aboutButton.addEventListener('click', function() {
     menuButton.classList.remove('activeTab');
     restHomeContainer.style.display = 'none';
     restMenu.style.display = 'block';
-})
+});
 menuButton.addEventListener('click', function() {
     menuButton.classList.add('activeTab');
     aboutButton.classList.remove('activeTab');
     // restHomeContainer.style.display = 'flex';
     window.innerWidth <= 480 ? restHomeContainer.style.display = 'flex' : restHomeContainer.style.display = 'grid';
     restMenu.style.display = 'none';
-})
+});
+filterButton.addEventListener('click', function() {
+    filterBar.classList.toggle('activeFilterBar');
+});
 
 
 
