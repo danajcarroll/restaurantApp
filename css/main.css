@@ -90,6 +90,10 @@ li {
         border: 1px solid var(--lightGrey);
         border-radius: 5px;
     }
+    .activeFilterBar {
+        margin-top: 1rem;
+        display: block;
+    }
     .filterSection {
         position: relative;
         display: flex;
