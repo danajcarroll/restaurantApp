@@ -837,36 +837,12 @@ h4 {
 
 
 
-
-
-
-
-
-
-
-
-
-
 }
-
-/* Media Query for Tablets Ipads portrait mode */
-/* @media (min-width: 768px) and (max-width: 1024px){
-    body {
-        background-color: blue;
-    }
-} */
-
-
-
-
-
-
-
 
 
 
 /* Media Query for Large screens */
-@media (min-width: 1281px) {
+@media (min-width: 1025px) {
     body {
         width: 100vw;
         height: 100vh;
