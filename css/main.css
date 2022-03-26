@@ -24,6 +24,9 @@ section {
 li {
     list-style-type: none;
 }
+h4 {
+    color: var(--logoMain);
+}
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
