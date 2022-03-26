@@ -32,8 +32,8 @@
                         </div>
     
                         <div class="filterMiniBox">
-                            <input type="radio" id="dineIn" name="filter">
-                            <label for="dinein">Dine In</label>
+                            <input type="radio" id="dine-in" name="filter">
+                            <label for="dine-in">Dine In</label>
                         </div>
     
                         <div class="filterMiniBox">
@@ -80,7 +80,7 @@
                 </div>
 
             <div class="searchBox">
-                <input type="text" class="searchBar" placeholder="Search for a restaurant">
+                <input id="searchBar" type="text" class="searchBar"  onkeyup="searchRestaurants()" placeholder="Search for a restaurant">
             </div>
             <div class="restContainer">
                 <ul class="restList" id="restList">

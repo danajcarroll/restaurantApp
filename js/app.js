@@ -7,14 +7,14 @@ let restaurants = [
         name: 'Five Vines',
         logo: './images/logo-fiveVines.png',
         images: [
-            './images/restImages/fiveVines1-pizzaTop.png',
-            './images/restImages/fiveVines2-sidePlate.png',
-            './images/restImages/fiveVines3-topDown.png'
+            './images/restImages/fiveVines1.png',
+            './images/restImages/fiveVines2.png',
+            './images/restImages/fiveVines3.png'
         ],
-        meals: ['dinner'],
+        meals: 'dinner',
         diningType: ['reservations', 'takeout'],
         diningGenre: ['Italian, Contemporary'],
-        priceRange: 'affordable',
+        priceRange: 'expensive',
         number: '416-334-2512',
         rating: 4,
         location: '2354 Longlane St, Toronto, ON, M4B 124',
@@ -132,18 +132,18 @@ let restaurants = [
                 }
             ]
         } // End of Menu
-
     }, // End of Restaurant
+
     { // Start of restaurant
         id: 2,
         name: 'Hearth Bistro',
         logo: './images/logo-hearth.png',
         images: [
-            './images/restImages/bistro1-topDown.png',
-            './images/restImages/bistro2-cheesecake.png',
-            './images/restImages/bistro3-bread.png'
+            './images/restImages/bistro1.png',
+            './images/restImages/bistro2.png',
+            './images/restImages/bistro3.png'
         ],
-        meals: ['lunch', 'dinner'],
+        meals: 'dinner',
         diningType: ['reservations', 'takeout'],
         diningGenre: 'Homestyle',
         priceRange: 'affordable',
@@ -264,49 +264,49 @@ let restaurants = [
                 }
             ]
         } // End of Menu
-
     }, // End of Restaurant
+
     { // Start of restaurant
         id: 3,
         name: 'Gelattes',
         logo: './images/logo-hearth.png',
         images: [
-            './images/restImages/gelattes1-cheesecake.png',
-            './images/restImages/gelattes2-spongecake.png',
-            './images/restImages/gelattes3-chocolate.png'
+            './images/restImages/gelattes1.png',
+            './images/restImages/gelattes2.png',
+            './images/restImages/gelattes3.png'
         ],
-        meals: ['lunch'],
-        diningType: ['reservations'],
-        diningGenre: 'Frozen Desserts, Coffee',
-        priceRange: 'expensive',
+        meals: 'breakfast',
+        diningType: ['dinein', 'takeout'],
+        diningGenre: 'Coffee, Breakfast',
+        priceRange: 'budget',
         number: '289-652-1363',
         rating: 4,
         location: '701 Brown St, Ajax, ON, L8B 248',
-        miniBio: "Where it's okay to be hot and cold! Welcome to Gelattes, we are all about the vibe — whether it be a first date, a study sesh, or a post-gym treat.",
+        miniBio: "Where it's okay to have your coffee hot or cold! Welcome to Gelattes, we are all about the vibe — whether it be a first date, a study sesh, or a post-gym treat.",
         hours: {
             mon: {
-                open: '4pm',
-                close: '11pm'
+                open: '6am',
+                close: '2pm'
             },
             tues: {
-                open: '4pm',
-                close: '11pm'
+                open: '6am',
+                close: '2pm'
             },
             wed: {
-                open: '4pm',
-                close: '11pm'
+                open: '6am',
+                close: '2pm'
             },
             thur: {
-                open: '4pm',
-                close: '11pm'
+                open: '6am',
+                close: '2pm'
             },
             fri: {
-                open: '4pm',
-                close: '12am'
+                open: '6am',
+                close: '2pm'
             },
             sat: {
-                open: '4pm',
-                close: '12am'
+                open: '6am',
+                close: '2pm'
             },
             sun: {
             }
@@ -314,87 +314,378 @@ let restaurants = [
         menu: {
             starters: [
                 {
-                    name: 'Four Cheese Spinach Dip',
-                    desc: 'Made in-house creamy blend of four cheeses, spinach, red pepper and onion. Served with your choice of baked pita chips or fried pita chips',
-                    price: 14.99
+                    name: 'Espresso',
+                    desc: '',
+                    price: 1.49
                 },
                 {
-                    name: 'Buffalo Chicken Potato Skins',
-                    desc: 'Hand-cut potato wedges topped with spiced chicken tossed in our creamy buffalo wing sauce and our three cheese blend',
-                    price: 14.99
+                    name: 'Latte',
+                    desc: '',
+                    price: 3.99
                 },
                 {
-                    name: 'Quesadilla',
-                    desc: 'Our three cheese blend, tomato, onions and jalapeño. Served with salsa and sour cream.',
-                    price: 13.49
+                    name: 'Iced Coffee',
+                    desc: '',
+                    price: 3.99
                 },
                 {
-                    name: 'House Garlic Cheese Toast',
-                    desc: 'A gooey six cheese blend freshly-baked on two Ace Bakery French Loaf slices with garlic, topped with a sprinkle of Sriracha lime seasoning',
-                    price: 9.99
+                    name: 'Cold Brew',
+                    desc: '',
+                    price: 3.99
                 },
                 {
-                    name: 'Truffle Fries and Dip',
-                    desc: 'Our house russet fries topped with truffle oil, parmesan cheese, and parsley, with roasted garlic dip on the side',
-                    price: 18
+                    name: 'Mocha',
+                    desc: '',
+                    price: 3.99
                 }
             ],
             mains: [
                 {
-                    name: 'Classic Sirloin',
-                    desc: 'Fresh 8oz. sirloin grilled to your liking and brushed with garlic butter. Served with your choice of side and freshly steamed veggies',
+                    name: 'Cake Pops',
+                    desc: 'With different fun dips, add some colour to your day.',
                     price: 25.99
                 },
                 {
-                    name: 'Lemon Pepper Salmon',
-                    desc: 'Atlantic salmon oven baked with a lemon pepper seasoning and paired with a basil pesto aioli. Served with your choice of side and freshly steamed veggies',
+                    name: 'Lemon Cake',
+                    desc: 'A cake that is made with lemons!',
                     price: 23.99
                 },
                 {
-                    name: 'Chicken Parm',
-                    desc: 'A hand breaded chicken breast with Parmesan cheese, topped with tomato sauce and mozzarella cheese. Served over spaghetti with your choice of tomato sauce or Alfredo sauce',
+                    name: 'Brownie',
+                    desc: 'Double chocolate and warmed to perfection',
                     price: 19.79
                 },
                 {
-                    name: 'Caesar Salad',
-                    desc: 'Chopped romaine lettuce tossed in creamy Caesar dressing and topped with double-smoked bacon, croutons and Parmesan cheese',
-                    price: 13.49
+                    name: 'Sugar Cookie',
+                    desc: 'Choose from assorted shapes like monster, hearts, or holiday favourites',
+                    price: 0.99
                 },
                 {
-                    name: 'Sonoma Chicken Salad',
-                    desc: 'Grilled chicken breast on fresh California greens topped with red pepper, tomato, crumbled feta cheese, raisins, croutons, mixed seeds and nuts and finished with our honey citrus dressing',
-                    price: 17.99
+                    name: 'Donut',
+                    desc: 'Choose from assorted donuts',
+                    price: 1.99
                 }
             ],
             desserts: [
                 {
-                    name: 'White Chocolate Cheesecake',
-                    desc: 'A dark chocolate cookie crumble crust filled with thick white chocolate cheesecake, with your choice of chocolate or caramel sauce',
-                    price: 7.99
+                    name: 'Bagels',
+                    desc: 'Assorted bagels can be topped with any spread',
+                    price: 2.50
                 },
                 {
-                    name: 'Funnel Cake Fries',
-                    desc: 'Golden fried strips of funnel cake topped with cinnamon sugar. Served warm with French Vanilla ice cream and choice of chocolate sauce or caramel sauce',
-                    price: 7.99
+                    name: 'Salmon Sandwich',
+                    desc: 'Smoky salmon sandwich great for the morning',
+                    price: 5.99
                 },
                 {
-                    name: 'Messy Cookie Sandwich',
-                    desc: 'French vanilla ice cream sandwiched between two giant freshly baked warm chocolate chip cookies. Topped with chocolate and caramel sauce',
-                    price: 8.49
+                    name: 'Croissant',
+                    desc: 'Flaky croissant can be topped with butter or any spread',
+                    price: 3.99
                 },
                 {
-                    name: 'Chocolate Peanut Butter Tart',
-                    desc: 'Tart topped with chocolate sauce, roasted peanuts and coconut whipped cream',
-                    price: 9.98
+                    name: 'English Muffin',
+                    desc: 'Can be topped with any protein or vegetables',
+                    price: 3.75
                 },
                 {
-                    name: 'Lemon Blueberry Tart',
-                    desc: 'House-made lemon blueberry tart with lemon streusel, whipped cream and fresh blueberries',
-                    price: 9
+                    name: 'Soup',
+                    desc: 'Check our soup of the day for a special deal! Tomato, Carrot + Orange',
+                    price: 5.75
                 }
             ]
         } // End of Menu
+    }, // End of Restaurant
 
+    { // Start of restaurant
+        id: 4,
+        name: "Tony's",
+        logo: './images/logo-hearth.png',
+        images: [
+            './images/restImages/tonys1.png',
+            './images/restImages/tonys2.png',
+            './images/restImages/tonys3.png'
+        ],
+        meals: 'lunch',
+        diningType: ['dine-in', 'takeout'],
+        diningGenre: 'Burgers',
+        priceRange: 'budget',
+        number: '647-123-9803',
+        rating: 4,
+        location: '17 Adams St, Toronto, ON, A3N 8X5',
+        miniBio: "With house ground meats, your burger can be made custom just the way you like it. Come down to Tony's today!",
+        hours: {
+            mon: {
+                open: '10am',
+                close: '4pm'
+            },
+            tues: {
+                open: '10am',
+                close: '4pm'
+            },
+            wed: {
+                open: '10am',
+                close: '4pm'
+            },
+            thur: {
+                open: '10am',
+                close: '4pm'
+            },
+            fri: {
+                open: '10am',
+                close: '4pm'
+            },
+            sat: {
+                open: '10am',
+                close: '4pm'
+            },
+            sun: {
+            }
+        }, 
+        menu: {
+            starters: [
+                {
+                    name: '1/4 Burger',
+                    desc: 'Quarter pounder, for a whole bunch of fun',
+                    price: 1.49
+                },
+                {
+                    name: 'Angus Burger',
+                    desc: 'Our biggest burger',
+                    price: 3.99
+                },
+                {
+                    name: 'Junior Burger',
+                    desc: 'Great for a small snack or a light meal',
+                    price: 3.99
+                }
+            ],
+            mains: [
+                {
+                    name: 'Brownie',
+                    desc: 'Double chocolate and warmed to perfection',
+                    price: 19.79
+                },
+                {
+                    name: 'Sugar Cookie',
+                    desc: 'Choose from assorted shapes like monster, hearts, or holiday favourites',
+                    price: 0.99
+                },
+                {
+                    name: 'Donut',
+                    desc: 'Choose from assorted donuts',
+                    price: 1.99
+                }
+            ],
+            desserts: [
+                {
+                    name: 'Bagels',
+                    desc: 'Assorted bagels can be topped with any spread',
+                    price: 2.50
+                },
+                {
+                    name: 'Salmon Sandwich',
+                    desc: 'Smoky salmon sandwich great for the morning',
+                    price: 5.99
+                },
+                {
+                    name: 'Croissant',
+                    desc: 'Flaky croissant can be topped with butter or any spread',
+                    price: 3.99
+                }
+            ]
+        } // End of Menu
+    }, // End of Restaurant 
+    { // Start of restaurant
+        id: 5,
+        name: "Vista",
+        logo: './images/logo-hearth.png',
+        images: [
+            './images/restImages/vista1.png',
+            './images/restImages/vista2.png',
+            './images/restImages/vista3.png'
+        ],
+        meals: 'lunch',
+        diningType: ['dine-in', 'takeout', 'delivery'],
+        diningGenre: 'Plant Based, Vegan',
+        priceRange: 'affordable',
+        number: '647-893-1204',
+        rating: 4,
+        location: '20 Rainer St, Toronto, ON, 3DM 97D',
+        miniBio: "Come to Vista for healthy living, plant based and vegan food made fresh daily.",
+        hours: {
+            mon: {
+                open: '10am',
+                close: '4pm'
+            },
+            tues: {
+                open: '10am',
+                close: '3pm'
+            },
+            wed: {
+            },
+            thur: {
+                open: '10am',
+                close: '3pm'
+            },
+            fri: {
+                open: '10am',
+                close: '12pm'
+            },
+            sat: {
+                open: '10am',
+                close: '12pm'
+            },
+            sun: {
+            }
+        }, 
+        menu: {
+            starters: [
+                {
+                    name: 'Mac and Cheese',
+                    desc: 'Quarter pounder, for a whole bunch of fun',
+                    price: 9.99
+                },
+                {
+                    name: 'Buffalo Tofu',
+                    desc: 'Our biggest burger',
+                    price: 7.99
+                },
+                {
+                    name: 'Protein Bowl',
+                    desc: 'Great for a small snack or a light meal',
+                    price: 10.99
+                }
+            ],
+            mains: [
+                {
+                    name: 'Ginger Shot',
+                    desc: 'Ginger root, lemon juice and tumeric',
+                    price: 1.99
+                },
+                {
+                    name: 'Green Wellness Shot',
+                    desc: 'Spinach, lettuce and celery',
+                    price: 1.99
+                },
+                {
+                    name: 'Spicy Shot',
+                    desc: 'Peppers, peppers and more peppers',
+                    price: 1.99
+                }
+            ],
+            desserts: [
+                {
+                    name: 'Brownie Slice',
+                    desc: 'Double chocolate and gluten-free',
+                    price: 4.99
+                },
+                {
+                    name: 'Chocolate Chip cookies',
+                    desc: 'Soft and gooey',
+                    price: 3.99
+                }
+            ]
+        } // End of Menu
+    }, // End of Restaurant
+
+    { // Start of restaurant
+        id: 6,
+        name: "Solo Mio",
+        logo: './images/logo-hearth.png',
+        images: [
+            './images/restImages/solo1.png',
+            './images/restImages/solo2.png',
+            './images/restImages/solo3.png'
+        ],
+        meals: 'lunch',
+        diningType: ['dine-in', 'takeout', 'delivery'],
+        diningGenre: 'Mexican, Tacos',
+        priceRange: 'budget',
+        number: '647-893-1204',
+        rating: 4,
+        location: '1701 Pixie St, Toronto, ON, 2P4 9S2',
+        miniBio: "Solo Mio, you won't want to share with anyone else! Get Mexican cuisine at the blink of an eye.",
+        hours: {
+            mon: {
+                open: '8am',
+                close: '5pm'
+            },
+            tues: {
+                open: '8am',
+                close: '5pm'
+            },
+            wed: {
+                open: '8am',
+                close: '5pm'
+            },
+            thur: {
+                open: '8am',
+                close: '5pm'
+            },
+            fri: {
+                open: '8am',
+                close: '5pm'
+            },
+            sat: {
+                open: '8am',
+                close: '4pm'
+            },
+            sun: {
+            }
+        }, 
+        menu: {
+            starters: [
+                {
+                    name: 'Tacos',
+                    desc: 'A crunchy corn taco shell filled with seasoned ground beef, crisp shredded lettuce and real cheddar cheese',
+                    price: 9.99
+                },
+                {
+                    name: 'Burritos',
+                    desc: 'A warm, soft flour tortilla wrapped around seasoned rice, hearty beans and a blend of three cheeses - cheddar, Monterey Jack and part skim mozzarella',
+                    price: 7.99
+                },
+                {
+                    name: 'Quesadilla',
+                    desc: 'A blend of three melted cheeses – Monterey Jack, cheddar and part skim mozzarella – and a creamy jalapeño sauce all folded in a freshly toasted tortilla',
+                    price: 10.99
+                },
+                {
+                    name: 'Chips and Cheese',
+                    desc: 'This dynamic food duo is freshly prepared. Crispy tortilla chips with a warm and zesty nacho cheese sauce sidekick.',
+                    price: 10.99
+                }
+            ],
+            mains: [
+                {
+                    name: 'Chilli Cheese Fries',
+                    desc: 'Freshly prepared french fries covered with hearty beef chili, warm and zesty nacho cheese sauce',
+                    price: 3.99
+                },
+                {
+                    name: 'Nachos',
+                    desc: 'Our crisp, freshly prepared tortilla chips covered with seasoned ground beef, warm zesty nacho cheese sauce',
+                    price: 3.99
+                },
+                {
+                    name: 'Fries',
+                    desc: 'Fresh, golden brown and served hot',
+                    price: 3.99
+                }
+            ],
+            desserts: [
+                {
+                    name: 'Cinnabon Delights',
+                    desc: 'Treat yourself to four donut-holes filled with a sweet cream cheese frosting and dusted with cinnamon and sugar',
+                    price: 2.99
+                },
+                {
+                    name: 'Cinnamon Twists',
+                    desc: 'Our crispy, puffed corn twists are sprinkled with cinnamon and sugar and are seriously addictive',
+                    price: 2.99
+                }
+            ]
+        } // End of Menu
     } // End of Restaurant
 ];
 
@@ -431,7 +722,21 @@ const clearFilters = document.getElementById('clearFilterButton');
 // const [...mealButtons] = mealRadios;
 const [...allRadioButtons] = [...radioButtons];
 
+// Capitilize first letter
+function capitalizeWord(el) {
+        return el.charAt(0).toUpperCase() + el.substring(1).toLowerCase();
+};
 
+// Return hours list
+function currentHours(time) {
+    if (time.hasOwnProperty('open')) {
+        const {open, close} = time;
+        console.log(`${open} - ${close}`);
+        return `${open} - ${close}`;
+    } else {
+        return `CLOSED`;
+    }
+};
 
 
 
@@ -442,7 +747,7 @@ const [...allRadioButtons] = [...radioButtons];
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
         return `
-        <li class="restThumbnails ${rest.diningType.join(' ')} ${rest.meals.join(' ')} ${rest.priceRange}" id="${rest.id}">
+        <li class="restThumbnails ${rest.name} ${rest.diningType.join(' ')} ${rest.meals} ${rest.priceRange}" id="${rest.id}">
         <img src="${rest.images[0]}" alt="" class="restMainImage">
         <div class="restThumbInfo">
             <h3 class="restThumbName">${rest.name},<span class="diningGenre"> ${rest.diningGenre}</span></h3>
@@ -487,8 +792,8 @@ function displayRestaurantHome(restID) {
     </div>
     <div class="bioBox">
         <div class="diningTypeBox">
-            <p class="diningTag">${currRest.diningType[0]}</p>
-            <p class="diningTag">${currRest.diningType[1]}</p>
+            <p class="diningTag">${capitalizeWord(currRest.diningType[0])}</p>
+            <p class="diningTag">${capitalizeWord(currRest.diningType[1])}</p>
         </div>
         <div class="genreBox">
             <div class="mealTypeBox">
@@ -497,7 +802,7 @@ function displayRestaurantHome(restID) {
                     viewBox="0 0 226 226"
                     style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#982f2f"><path d="M113,18.83333c-57.58292,0 -103.28141,51.96955 -92.62174,111.47347c6.69525,37.38417 36.42573,67.5918 73.67806,74.98388c13.79541,2.74025 27.18533,2.39257 39.653,-0.42302c4.36933,-0.99817 7.54069,-4.79617 7.54069,-9.28792v-13.64681c0,-4.40699 -4.25147,-7.44328 -8.44189,-6.10612c-6.82708,2.18467 -14.13104,3.27906 -21.72087,3.05306c-34.95467,-1.02642 -63.97566,-30.84223 -64.00391,-65.80632c-0.03767,-36.37658 29.5495,-65.99023 65.91667,-65.99023c4.70833,0 6.71114,-3.24007 7.57748,-5.4624c1.96807,-5.07558 4.78734,-11.41535 8.47867,-16.77344c1.27125,-1.84567 0.18039,-4.43304 -2.02311,-4.80029c-4.58592,-0.74392 -9.24937,-1.21387 -14.03304,-1.21387zM169.5,18.83333c-7.06721,0 -12.99095,3.50665 -17.47233,7.743c-4.48138,4.23635 -7.95082,9.43605 -10.85123,15.00781c-5.80085,11.14353 -9.3431,23.40341 -9.3431,33.74919c0,17.42399 12.09287,32.0694 28.25,36.30567v86.111c-0.04803,3.39599 1.7362,6.55477 4.66947,8.26678c2.93327,1.71201 6.56113,1.71201 9.49439,0c2.93327,-1.71201 4.7175,-4.87079 4.66947,-8.26678v-86.111c16.15713,-4.23627 28.25,-18.88168 28.25,-36.30567c0,-10.34578 -3.54226,-22.60565 -9.3431,-33.74919c-2.90041,-5.57177 -6.36985,-10.77146 -10.85123,-15.00781c-4.48138,-4.23635 -10.40512,-7.743 -17.47233,-7.743zM107.79509,66.43164c-0.81219,-0.07798 -1.56758,-0.03899 -2.17025,0.05518c-25.49092,4.03033 -44.26054,28.59695 -38.75179,56.16895c3.56892,17.854 17.91109,32.29504 35.68034,36.26888c11.82733,2.64608 22.94635,0.62297 32.25944,-4.37728c3.99267,-2.13758 6.43718,-6.34962 6.43718,-10.86963v-12.37777c0,-4.03033 -1.69824,-8.01843 -4.96582,-10.39143c-14.30392,-10.396 -23.28418,-27.1562 -23.28418,-45.5752c0,-0.8475 0.07356,-1.72605 0.07356,-2.63005c0,-4.67537 -2.84191,-6.0377 -5.27847,-6.27165z"></path></g></g>
                 </svg>
-                <p class="mealText">${currRest.meals}, ${currRest.priceRange}</p>
+                <p class="mealText">${capitalizeWord(currRest.meals)}, ${capitalizeWord(currRest.priceRange)}</p>
             </div>
             <div class="mealTypeBox">
                 <svg class="mealIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -521,25 +826,25 @@ function displayRestaurantHome(restID) {
         </div>
         <div class="hoursBox">
             <div class="hoursMiniBox">
-                <p class="dayBox">MON</p><p class="hourBox">${restHours.mon.open} - ${restHours.mon.close}</p>
+                <p class="dayBox">MON</p><p class="hourBox">${currentHours(currRest.hours.mon)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">TUE</p><p class="hourBox">${restHours.tues.open} - ${restHours.tues.close}</p>
+                <p class="dayBox">TUE</p><p class="hourBox">${currentHours(currRest.hours.tues)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">WED</p><p class="hourBox">${restHours.wed.open} - ${restHours.wed.close}</p>
+                <p class="dayBox">WED</p><p class="hourBox">${currentHours(currRest.hours.wed)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">THUR</p><p class="hourBox">${restHours.thur.open} - ${restHours.thur.close}</p>
+                <p class="dayBox">THUR</p><p class="hourBox">${currentHours(currRest.hours.thur)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">FRI</p><p class="hourBox">${restHours.fri.open} - ${restHours.fri.close}</p>
+                <p class="dayBox">FRI</p><p class="hourBox">${currentHours(currRest.hours.fri)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">SAT</p><p class="hourBox">${restHours.sat.open} - ${restHours.sat.close}</p>
+                <p class="dayBox">SAT</p><p class="hourBox">${currentHours(currRest.hours.sat)}</p>
             </div>
             <div class="hoursMiniBox">
-                <p class="dayBox">SUN</p><p class="hourBox">${restHours.sun.open} - ${restHours.sun.close}</p>
+                <p class="dayBox">SUN</p><p class="hourBox">${currentHours(currRest.hours.sun)}</p>
             </div>
         </div>
     </div>
@@ -624,7 +929,19 @@ filterButton.addEventListener('click', function() {
 });
 
 
-
+    // // Search Bar
+    // function searchRestaurants() {
+    //     let input = document.getElementById('searchBar').value;
+    //     restaurantThumbnails.forEach(thumb => {
+    //         if (!thumb.classList.contains(input)) {
+    //             thumb.style.display= 'none';
+    //         }
+    //         else {
+    //             thumb.style.display= 'block';                 
+    //         }
+            
+    //     });
+    // }
 
 
 
@@ -632,7 +949,25 @@ filterButton.addEventListener('click', function() {
 window.addEventListener('DOMContentLoaded', function() {
     displayRestaurantThumbnails(restaurants);
     const restaurantThumbnails = [...document.getElementsByClassName('restThumbnails')];
-    console.log(restaurantThumbnails);
+    
+
+    function searchRestaurants() {
+        let input = document.getElementById('searchBar').value;
+        console.log(input);
+        restaurantThumbnails.forEach(thumb => {
+            console.log(thumb.classList);
+            if (!thumb.classList.contains(input)) {
+                thumb.style.display= 'none';
+            }
+            else {
+                thumb.style.display= 'block';                 
+            }
+            
+        });
+    }
+
+
+
 
     // Clicking restThumbnail, changing to restHomePage
     restaurantThumbnails.forEach(rest => {
