@@ -461,7 +461,7 @@ h4 {
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 1279px) {
     body {
         width: 100vw;
         height: 100vh;
@@ -842,7 +842,7 @@ h4 {
 
 
 /* Media Query for Large screens */
-@media (min-width: 1025px) {
+@media (min-width: 1280px) {
     body {
         width: 100vw;
         height: 100vh;
