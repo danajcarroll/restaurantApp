@@ -19,6 +19,8 @@ Template Literals - These have changed everything! I used them a lot with this a
 
 Global Variables - When looking at my code now, I'm seeing that I think I could have been more strategic with how many variables I made in the global scope. My original intention was to minimize using 'document.getElementByID' all the time, but now seems counterintuitive as not many of them were reused across my script file. It didn't seem to create any problems with the application running, but after looking into issues that can occur (coupling, reassigning values etc.) it's something I'll think more about with my next app!
 
+Large Images - When first arriving to the page, the images take a second to load. After trying to make them small and running through tiny.png, it doesn't seem to have made a large difference. There's definitely a way to make them load faster, or maybe creating a page loader before the app appears could be another solution.
+
 ## Live Demo
 [Check it out here!](https://danacarroll.com/foodFind)
 
