@@ -2,7 +2,7 @@
 
 FoodFind is an app that allows users to find the next restaurant they should eat at.
 
-![App Home Page - Desktop](/images/ss-appHome.png?raw=true "App Home")
+![FoodFind in Mobile and Desktop](/images/appInDevices.png?raw=true "Apps in Devices")
 
 ## Description
 
