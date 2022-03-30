@@ -2,6 +2,8 @@
 
 FoodFind is an app that allows users to find the next restaurant they should eat at.
 
+![App Home Page - Desktop](/images/ss-appHome.png?raw=true "App Home")
+
 ## Description
 
 Using Vanilla JavaScript, this app uses objects to display all information to the user. Users are able to filter through restaurants, view restaurant information, and also view the restaurants menu. 
