@@ -26,3 +26,5 @@ Large Images - When first arriving to the page, the images take a second to load
 
 ## App Shots
 ###
+
+![alt text](https://github.com/danajcarroll/restaurantApp/blob/main/ss-appHome.png?raw=true)
