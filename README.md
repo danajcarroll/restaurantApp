@@ -26,4 +26,16 @@ Large Images - When first arriving to the page, the images take a second to load
 
 ## App Shots
 ###
-![Alt text](/images/ss-appHome.png?raw=true "App Home")
+![App Home Page - Desktop](/images/ss-appHome.png?raw=true "App Home")
+
+On this page users are able to filter through restaurants and select what they might like.
+
+![Restaurant HomePage - Desktop](/images/ss-restHome.png?raw=true "Restaurant Home")
+
+Here is the Restaurant Homepage for Five Vines, all information is populated using the restaurant object.
+
+![Restaurant Menu - Desktop](/images/ss-restMenu.png?raw=true "Restaurant Menu")
+
+By clicking the Menu tab users are able to view the restaurant's menu, with each items pricing and description on display. They can also navigate back to the apps homepage in the top left corner.
+
+
