@@ -18,3 +18,9 @@ CSS Classes - With this project I was more strategic with how I assigned classes
 Template Literals - These have changed everything! I used them a lot with this app and see how helpful they are. I remember wondering how I could either display "open - close" time or just "CLOSED" and was jumping for joy when I realized I could simply use a function in a template literal.
 
 Global Variables - When looking at my code now, I'm seeing that I think I could have been more strategic with how many variables I made in the global scope. My original intention was to minimize using 'document.getElementByID' all the time, but now seems counterintuitive as not many of them were reused across my script file. It didn't seem to create any problems with the application running, but after looking into issues that can occur (coupling, reassigning values etc.) it's something I'll think more about with my next app!
+
+## Live Demo
+[Check it out here!](https://danacarroll.com/foodFind)
+
+## App Shots
+###
