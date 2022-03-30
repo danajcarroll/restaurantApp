@@ -738,11 +738,6 @@ function currentHours(time) {
     }
 };
 
-
-
-
-
-
 // Display Restaurants on Splash Page
 function displayRestaurantThumbnails() {
     let displayRestaurants = restaurants.map(function(rest) {
@@ -949,7 +944,6 @@ filterButton.addEventListener('click', function() {
 window.addEventListener('DOMContentLoaded', function() {
     displayRestaurantThumbnails(restaurants);
     const restaurantThumbnails = [...document.getElementsByClassName('restThumbnails')];
-    
 
     function searchRestaurants() {
         let input = document.getElementById('searchBar').value;
